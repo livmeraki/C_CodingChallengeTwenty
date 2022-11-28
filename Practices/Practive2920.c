@@ -14,45 +14,49 @@ Start Date: Nov 27, 2022
 */
 
 #include <stdio.h>
-int is_inorder(int step, int cur);
+int	is_inorder(int step, int cur);
 int	main(void)
 {
-	int	n1, n2;
-
+	int n1, n2;
+	scanf("%d", &n1);
 	scanf("%d", &n2);
-
 	if (n1 > n2)
 	{
-        if(is_inorder(-1, n2)){
-            printf("descending");
-        }
+		if (is_inorder(-1, n2))
+		{
+			printf("descending");
+		}
 	}
 	else if (n1 < n2)
 	{
-        if(is_inorder(1, n2)){
-            printf("ascending");
-        }
-        
+		if (is_inorder(1, n2))
+		{
+			printf("ascending");
+		}
 	}
- 
-    return (0);
+	return (0);
 }
 
-int is_inorder(int step, int cur){
-    int i, num;
-    for(i=0;i<6;i++){
-        scanf("%d", &num);
-        if(num==cur+step){
-            cur = num;
-            if(i==5){
-                return 1;
-            }
-        }
-        
-        else{
-            break;
-        }
-    }
-    printf("mixed");
-    return 0;
+int	is_inorder(int step, int cur)
+{
+	int i, num;
+	for (i = 0; i < 6; i++)
+	{
+		scanf("%d", &num);
+		if (num == cur + step)
+		{
+			cur = num;
+			if (i == 5)
+			{
+				return (1);
+			}
+		}
+
+		else
+		{
+			break ;
+		}
+	}
+	printf("mixed");
+	return (0);
 }
