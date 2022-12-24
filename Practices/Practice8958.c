@@ -21,7 +21,6 @@ OX퀴즈의 결과가 주어졌을 때, 점수를 구하는 프로그램을 작�
 #include <string.h>
 
 int calcpoint(char p[]);
-
 int main(){
 
     char *p;
@@ -29,28 +28,26 @@ int main(){
     int num, i;
 
     scanf("%d", &num);
-    p = (char*)malloc(sizeof(char)*20);
-    score = (int*)malloc(sizeof(int)*20);
+    p = (char*)malloc(sizeof(char)*100);
+    score = (int*)malloc(sizeof(int)*100); 
+    //->score = (int*)malloc(sizeof(int)*20); -> size를 sizeof(int)*20로 해서 Runtime Error(AssertionFailed)뜸
+
 
     for(i=0;i<num;i++){
         scanf("%s", p);
         score[i] = calcpoint(p);
     }
-
     for(i=0;i<num;i++){
         printf("%d\n", score[i]);
     }
     return 0;
 }
-
 int calcpoint(char p[]){
     int score=0, i,j;
     for(i=0;i<strlen(p);i++){
         for(j=i; p[j]=='O';j++){
             score++;
         }
-        i+=j;
     }
-
     return score;
 }
