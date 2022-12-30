@@ -1,0 +1,4 @@
+This is the list of exercises that I fumbled with. 
+1. 10951
+-> scanf returns the number fields that were successfully converted and assigned
+-> however when reading an end-of-file, the return value is EOF
