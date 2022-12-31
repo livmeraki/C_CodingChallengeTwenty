@@ -17,24 +17,24 @@ N개의 숫자가 공백 없이 쓰여있다. 이 숫자를 모두 합해서 출
 
 */
 
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h> 
+#include <string.h>
 
 int	main(void)
 {
-	int repeat, i, sum = 0;
-    char *num;
-	scanf("%d", &repeat);
-    num = (char*)malloc(sizeof(char)*repeat);
+	char	*num;
 
-    scanf("%s", num);
-    
+	int repeat, i, sum = 0;
+	scanf("%d", &repeat);
+	num = (char *)malloc(100);
+	scanf("%s", num);
 	for (i = 0; i < repeat; i++)
 	{
-        sum+=atoi(&num[repeat-1-i]);
+		sum += atoi(strncpy(num[repeat - 1 - i], 1));
+		printf("%c\n", num[repeat - 1 - i]);
 	}
-
 	printf("%d", sum);
 }
 
@@ -42,7 +42,7 @@ int	main(void)
 
 /*
 
-for (i = 0; i < repeat; i++)
+for	(i = 0; i < repeat; i++)
 	{
         sum+=num%10;
         num/=10;
@@ -52,11 +52,11 @@ for (i = 0; i < repeat; i++)
 
 //I realize that this is a mistake because
 //the number stores -1 if the input is larger than
-//its given space... 
+//its given space...
 //I need to get an answer for this... what does the num(int) store if
 //it is given a input greater than 4 bytes..
 
-//no... the output is -1... 
+//no... the output is -1...
 //for test case
 //25
 //7000000000000000000000000
