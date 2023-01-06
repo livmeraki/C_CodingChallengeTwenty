@@ -24,16 +24,13 @@ N개의 숫자가 공백 없이 쓰여있다. 이 숫자를 모두 합해서 출
 
 int	main(void)
 {
-	char	*num;
-
 	int repeat, i, sum = 0;
+	int num;
 	scanf("%d", &repeat);
-	num = (char *)malloc(100);
-	scanf("%s", num);
 	for (i = 0; i < repeat; i++)
 	{
-		sum += atoi(strncpy(num[repeat - 1 - i], 1));
-		printf("%c\n", num[repeat - 1 - i]);
+		scanf("%1d", &num);
+		sum+=num;
 	}
 	printf("%d", sum);
 }
