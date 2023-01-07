@@ -17,11 +17,7 @@ N개의 숫자가 공백 없이 쓰여있다. 이 숫자를 모두 합해서 출
 
 */
 
-#include <ctype.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 int	main(void)
 {
 	int repeat, i, sum = 0;
